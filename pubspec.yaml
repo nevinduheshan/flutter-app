@@ -37,7 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   hexcolor: ^3.0.1
   get: ^4.6.5
-  email_validator: ^2.0.1
+  validators: ^3.0.0
+  intl_phone_field: ^3.1.0
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_application_1/component/emailfield.dart';
 import 'package:flutter_application_1/component/my_textField.dart';
 
 class MyRegister extends StatelessWidget {
@@ -8,9 +8,6 @@ class MyRegister extends StatelessWidget {
 
   final firstnameController = TextEditingController();
   final lastnameController = TextEditingController();
-  final emailaddressController = TextEditingController();
-
-  void singUp() {}
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +22,9 @@ class MyRegister extends StatelessWidget {
               const Text(
                 'Register',
                 style: TextStyle(
-                  color: Color.fromARGB(255, 36, 99, 235),
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                ),
+                    color: Color.fromARGB(255, 36, 99, 235),
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 1),
               const Text(
@@ -41,8 +37,9 @@ class MyRegister extends StatelessWidget {
               //First Name
               MyTextField(
                 controller: firstnameController,
-                hintText: 'First Name',
+                hintText: "First Name",
                 obscureText: false,
+                prefixIcon: const Icon(Icons.boy_rounded),
               ),
               const SizedBox(height: 20),
               //Last Name
@@ -50,35 +47,13 @@ class MyRegister extends StatelessWidget {
                 controller: lastnameController,
                 hintText: 'Last Name',
                 obscureText: false,
+                prefixIcon: const Icon(Icons.boy_rounded),
               ),
               const SizedBox(height: 20),
               //Email Address
-
+              const EmailField(),
+              const SizedBox(height: 20),
               //Mobile Number
-              //Password
-              //Comfirm Password
-              //Button
-              GestureDetector(
-                onTap: onTap,
-                child: Container(
-                  padding: const EdgeInsets.all(25),
-                  margin: const EdgeInsets.symmetric(horizontal: 25),
-                  decoration: BoxDecoration(
-                    color: HexColor('#2463EB'),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Sing Up',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
