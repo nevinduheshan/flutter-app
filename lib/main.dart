@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/profile/profile.dart';
 import 'view/login.dart';
 import 'view/register.dart';
 
@@ -12,11 +13,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyRegister(
-        onTap: () {},
-      ),
+      home: MyProfile(),
     );
   }
 }
