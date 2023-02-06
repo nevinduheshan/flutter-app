@@ -16,47 +16,18 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Center(
-              child: ExpansionCard(
-                title: Row(
-                  children: const [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('lib/images/Magiya.png'),
-                      radius: 40,
-                    ),
-                    Text(
-                      'Hi',
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
-                background: Image.asset('lib/images/back.jpg'),
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(left: 20),
-                    child: Text(
-                      'my name is nevindu heshan',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
+      body: Center(
+        child: Container(
+          width: 250,
+          height: 250,
+          decoration: BoxDecoration(
+              color: Color.fromARGB(255, 255, 254, 254),
+              border: Border.all(
+                color: Colors.black,
+                width: 5,
               ),
-            ),
-          ),
-        ],
+              borderRadius: BorderRadius.circular(15)),
+        ),
       ),
     );
   }
