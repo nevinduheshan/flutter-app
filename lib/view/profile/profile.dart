@@ -34,9 +34,10 @@ class MyProfile extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(100),
                   child: const Image(
-                      image: AssetImage(
-                    'lib/images/Profile.png',
-                  )),
+                    image: AssetImage(
+                      'lib/images/Profile.png',
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
