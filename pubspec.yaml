@@ -41,6 +41,7 @@ dependencies:
   intl_phone_field: ^3.1.0
   line_awesome_flutter: ^2.0.0
   expansion_card: ^0.1.0
+  scroll_snap_list: ^0.9.1
   
 
 dev_dependencies:
