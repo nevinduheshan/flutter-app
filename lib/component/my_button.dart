@@ -3,7 +3,8 @@ import 'package:hexcolor/hexcolor.dart';
 
 class MyButton extends StatelessWidget {
   final Function()? onTap;
-  const MyButton({super.key, required this.onTap});
+  const MyButton(
+      {super.key, required this.onTap, required Null Function() onPressed});
 
   @override
   Widget build(BuildContext context) {

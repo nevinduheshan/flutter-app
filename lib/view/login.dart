@@ -93,6 +93,7 @@ class LoginPage extends StatelessWidget {
                 //singInbutton
                 MyButton(
                   onTap: singUserIn,
+                  onPressed: () {},
                 ),
                 const SizedBox(height: 40),
 
