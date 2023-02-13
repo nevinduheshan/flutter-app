@@ -9,18 +9,31 @@ class MyProfile extends StatelessWidget {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(LineAwesomeIcons.angle_left),
+        title: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            'Profile',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-        title:
-            Text('Profile', style: Theme.of(context).textTheme.headlineSmall),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(isDark ? LineAwesomeIcons.sun : LineAwesomeIcons.moon),
-          )
-        ],
+        backgroundColor: Colors.grey.shade300,
+        elevation: 2,
+
+        // leading: IconButton(
+        //   onPressed: () {},
+        //   icon: const Icon(LineAwesomeIcons.angle_left),
+        // ),
+        // title:
+        //     Text('Profile', style: Theme.of(context).textTheme.headlineSmall),
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {},
+        //     icon: Icon(isDark ? LineAwesomeIcons.sun : LineAwesomeIcons.moon),
+        //   )
+        // ],
       ),
       body: SingleChildScrollView(
         child: Container(

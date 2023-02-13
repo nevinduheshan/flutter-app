@@ -17,7 +17,7 @@ class MyNavBar extends StatefulWidget {
 class _MyNavBarState extends State<MyNavBar> {
   List pages = [
     const MyHomePageNew(),
-    const MyDashBoard(),
+    MyDashBoard(),
     MyRegister(
       onTap: () {},
     ),
@@ -37,14 +37,14 @@ class _MyNavBarState extends State<MyNavBar> {
     return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: Container(
-        color: Colors.blue,
+        color: Colors.grey.shade300,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
           child: GNav(
-            backgroundColor: const Color.fromARGB(255, 33, 149, 243),
-            color: const Color.fromARGB(255, 255, 255, 255),
-            activeColor: const Color.fromARGB(255, 255, 255, 255),
-            tabBackgroundColor: const Color.fromARGB(255, 29, 50, 232),
+            backgroundColor: Colors.grey.shade300,
+            color: Colors.grey.shade700,
+            activeColor: const Color.fromARGB(255, 36, 99, 235),
+            tabBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
             gap: 8,
             onTabChange: onTap,
             //currentIndex: currentIndex,

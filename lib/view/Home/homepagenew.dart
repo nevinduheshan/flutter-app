@@ -12,65 +12,63 @@ class MyHomePageNew extends StatefulWidget {
 class _MyHomePageNewState extends State<MyHomePageNew> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 150,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(50),
-                ),
-                color: Color.fromARGB(255, 29, 62, 161),
+    return SafeArea(
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 100,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(50),
               ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 40,
-                    left: 0,
-                    child: Container(
-                      height: 90,
-                      width: 330,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(50),
-                          bottomRight: Radius.circular(50),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    top: 55,
-                    left: 20,
-                    child: Text(
-                      'Good Morning..!',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const Positioned(
-                    top: 80,
-                    left: 40,
-                    child: Text(
-                      'Nevindu Heshan',
-                      style: (TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+              color: Color.fromARGB(255, 29, 62, 161),
             ),
-            const SizedBox(height: 10),
-          ],
-        ),
+            child: Stack(
+              children: [
+                Positioned(
+                  top: 25,
+                  left: 0,
+                  child: Container(
+                    height: 70,
+                    width: 330,
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 231, 231, 231),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(50),
+                        bottomRight: Radius.circular(50),
+                      ),
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  top: 35,
+                  left: 20,
+                  child: Text(
+                    'Good Morning..!',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Color.fromARGB(255, 126, 126, 126),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  top: 60,
+                  left: 40,
+                  child: Text(
+                    'Nevindu Heshan',
+                    style: (TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    )),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          const Text('data')
+        ],
       ),
     );
   }

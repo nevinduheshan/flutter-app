@@ -1,11 +1,6 @@
-import 'dart:core';
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:scroll_snap_list/scroll_snap_list.dart';
-
-import '../../component/bottom_navigarion.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
 class MyDashBoard extends StatefulWidget {
   const MyDashBoard({super.key});
@@ -14,156 +9,424 @@ class MyDashBoard extends StatefulWidget {
   State<MyDashBoard> createState() => _MyDashBoardState();
 }
 
-class Product {
-  final Color color;
-  final String title;
-  final String _type;
-  final String balance;
-  final double milesnub;
-  final String miles;
-
-  Product(this.color, this.title, this._type, this.balance, this.milesnub,
-      this.miles);
-}
-
 class _MyDashBoardState extends State<MyDashBoard> {
-  List<Product> productList = [
-    Product(const Color.fromARGB(255, 175, 210, 254), "Magiya Mills Card",
-        'Miles', 'Current Miles Balance', 9.0, 'Miles'),
-    Product(const Color.fromARGB(255, 181, 191, 208), 'Magiya Transit Card',
-        'Transit', 'Current Account Balance', 0.00, 'LKR')
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Color.fromARGB(255, 254, 242, 242),
       appBar: AppBar(
-        title: const Text('Dashboard'),
-      ),
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            const SizedBox(height: 10),
-            Container(
-              height: 250,
-              child: ScrollSnapList(
-                itemBuilder: _cardListItem,
-                itemCount: productList.length,
-                itemSize: 400,
-                onItemFocus: (index) {},
-                dynamicItemSize: true,
-                reverse: false,
-              ),
+        title: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            'Dashboard',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
-                ),
-                child: Card(
-                  color: const Color.fromARGB(255, 254, 226, 226),
-                  child: SizedBox(
-                    height: 100,
-                    width: 380,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Row(
-                        children: const [
-                          Text('Total Booked Tickets'),
-                        ],
+          ),
+        ),
+        backgroundColor: Colors.blue.shade200,
+        elevation: 2,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              height: 290,
+              color: Colors.grey.shade300,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  //1 one -----------------------------------------------------------------------------------------
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 18, right: 20, top: 20, bottom: 20),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        width: 380,
+                        padding: const EdgeInsets.only(
+                          left: 28,
+                          bottom: 20,
+                          right: 20,
+                          top: 20,
+                        ),
+                        color: const Color.fromARGB(255, 24, 33, 52),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  height: 30,
+                                ),
+                                const Text(
+                                  'Magiya Mills Card',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(221, 255, 255, 255),
+                                  ),
+                                ),
+                                const SizedBox(width: 85),
+                                SizedBox(
+                                  height: 40,
+                                  width: 40,
+                                  child: Image.asset(
+                                      'lib/images/Magiya_white.png'),
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 5),
+                            Row(
+                              children: const [
+                                SizedBox(width: 265),
+                                Text(
+                                  'Miles',
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.white),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 30),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  height: 45,
+                                  width: 45,
+                                  child: Image.asset('lib/images/sim.png'),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 18),
+                            Row(
+                              children: const [
+                                Text(
+                                  'Current Miles Balance',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: const [
+                                Text(
+                                  '0.00 Miles',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      color: Colors.white),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
+                  //2 one ---------------------------------------------------------------------------------------
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 18, right: 20, top: 20, bottom: 20),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        width: 380,
+                        padding: const EdgeInsets.only(
+                          left: 28,
+                          bottom: 20,
+                          right: 20,
+                          top: 20,
+                        ),
+                        color: const Color.fromARGB(255, 30, 62, 161),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  height: 30,
+                                ),
+                                const Text(
+                                  'Magiya Transit Card',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(221, 255, 255, 255),
+                                  ),
+                                ),
+                                const SizedBox(width: 85),
+                                SizedBox(
+                                  height: 40,
+                                  width: 40,
+                                  child: Image.asset(
+                                      'lib/images/Magiya_white.png'),
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 5),
+                            Row(
+                              children: const [
+                                SizedBox(width: 280),
+                                Text(
+                                  'Transit',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 30),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  height: 45,
+                                  width: 45,
+                                  child: Image.asset('lib/images/sim.png'),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 18),
+                            Row(
+                              children: const [
+                                Text(
+                                  'Current Account Balance',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: const [
+                                Text(
+                                  'LKR 0.00',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      color: Colors.white),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  //----------------------------------------------------------------------------------------------
+                ],
               ),
             ),
-          ],
-        ),
-      ),
-      //BottomNavigation(),
-    );
-  }
-
-  Widget _cardListItem(BuildContext context, int index) {
-    Product product = productList[index];
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(25),
-      child: SizedBox(
-        width: 400,
-        height: 150,
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
-          child: Card(
-            color: (product.color),
-            elevation: 12,
-            child: Column(
-              children: [
-                const SizedBox(height: 25),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
+            const Divider(),
+            //------------------------------------------------------------------------------------------------------
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Container(
+                height: 100,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                  color: Color.fromARGB(255, 22, 100, 52),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
                     children: [
-                      Text(product.title),
-                      const SizedBox(width: 100),
-                      SizedBox(
-                        height: 40,
-                        width: 40,
-                        child: Image.asset(
-                          'lib/images/Magiyablack.png',
+                      Row(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(top: 20, left: 10),
+                            child: Text(
+                              'Total Booked Tickets',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Row(
+                          children: [
+                            const Text(
+                              "3",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(width: 170),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 14, vertical: 4),
+                                color: Colors.grey.shade200.withOpacity(0.7),
+                                child: const Text(
+                                  'Cancelled 0',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Color.fromARGB(255, 22, 100, 52),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       )
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    children: [
-                      const SizedBox(width: 270),
-                      Text(product._type),
-                    ],
+              ),
+            ),
+            //------------------------------------------------------------------------------------------------------
+            const SizedBox(height: 1),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Container(
+                height: 100,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(0),
+                    topRight: Radius.circular(0),
                   ),
+                  color: Color.fromARGB(255, 154, 52, 19),
                 ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
                     children: [
-                      SizedBox(
-                        height: 40,
-                        width: 40,
-                        child: Image.asset('lib/images/sim.png'),
+                      Row(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(top: 20, left: 10),
+                            child: Text(
+                              'Total Pending Tickets',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Row(
+                          children: [
+                            const Text(
+                              "3",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(width: 125),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 14, vertical: 4),
+                                color: Colors.grey.shade200.withOpacity(0.7),
+                                child: const Text(
+                                  'Refund Requested 0',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Color.fromARGB(255, 154, 52, 19),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
                 ),
-                const SizedBox(height: 40),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
+              ),
+            ),
+            //------------------------------------------------------------------------------------------------------
+            const SizedBox(height: 1),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Container(
+                height: 100,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                  ),
+                  color: Color.fromARGB(255, 153, 27, 27),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
                     children: [
-                      Text(product.balance),
+                      Row(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(top: 20, left: 10),
+                            child: Text(
+                              'Total Rejected Tickets',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Row(
+                          children: [
+                            const Text(
+                              "3",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(width: 170),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 14, vertical: 4),
+                                color: Colors.grey.shade200.withOpacity(0.7),
+                                child: const Text(
+                                  'Refunded 0',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Color.fromARGB(255, 153, 27, 27),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    children: [
-                      Text(" ${product.miles}"),
-                      Text(' ${product.milesnub}'),
-                    ],
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
+            //history list table
+            const SizedBox(height: 100),
+          ],
         ),
       ),
     );
