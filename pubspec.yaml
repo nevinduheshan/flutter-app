@@ -43,7 +43,8 @@ dependencies:
   expansion_card: ^0.1.0
   scroll_snap_list: ^0.9.1
   google_nav_bar: ^5.0.6
-  smooth_page_indicator: ^1.0.0+2
+  smooth_page_indicator: ^1.0.1
+  device_preview: ^1.1.0
   
 
 dev_dependencies:

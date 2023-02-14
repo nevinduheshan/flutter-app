@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:scroll_snap_list/scroll_snap_list.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+
+import '../../component/My_Ending.dart';
+import '../../component/My_Search.dart';
+import '../../component/circle_Button.dart';
 
 class MyHomePageNew extends StatefulWidget {
   const MyHomePageNew({super.key});
@@ -12,64 +17,98 @@ class MyHomePageNew extends StatefulWidget {
 class _MyHomePageNewState extends State<MyHomePageNew> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: <Widget>[
-          Container(
-            height: 100,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(50),
-              ),
-              color: Color.fromARGB(255, 29, 62, 161),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.light,
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade100,
+        body: Column(
+          children: const [
+            AppBar(),
+            Body(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class AppBar extends StatelessWidget {
+  const AppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+          height: 130,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
             ),
-            child: Stack(
-              children: [
-                Positioned(
-                  top: 25,
-                  left: 0,
-                  child: Container(
-                    height: 70,
-                    width: 330,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 231, 231, 231),
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(50),
-                        bottomRight: Radius.circular(50),
-                      ),
-                    ),
-                  ),
-                ),
-                const Positioned(
-                  top: 35,
-                  left: 20,
-                  child: Text(
-                    'Good Morning..!',
+            gradient: LinearGradient(
+              colors: [
+                Colors.blue,
+                Color.fromARGB(31, 15, 82, 249),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Hello, \nGood Morning',
                     style: TextStyle(
-                      fontSize: 18,
-                      color: Color.fromARGB(255, 126, 126, 126),
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
-                ),
-                const Positioned(
-                  top: 60,
-                  left: 40,
-                  child: Text(
-                    'Nevindu Heshan',
-                    style: (TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    )),
-                  ),
-                ),
+                  CircleButton(
+                    icon: Icons.notification_add,
+                    onPressed: () {},
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Body extends StatelessWidget {
+  const Body({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const SizedBox(height: 10),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Container(
+            height: 120,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.grey.shade300,
+            ),
+            child: Column(
+              children: const [
+                MySearchField(),
+                MyEndingPoint(),
               ],
             ),
           ),
-          const SizedBox(height: 10),
-          const Text('data')
-        ],
-      ),
+        )
+      ],
     );
   }
 }
