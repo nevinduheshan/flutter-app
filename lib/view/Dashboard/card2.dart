@@ -37,7 +37,7 @@ class MyCardTwo extends StatelessWidget {
                         color: Color.fromARGB(221, 255, 255, 255),
                       ),
                     ),
-                    const SizedBox(width: 75),
+                    Expanded(child: const SizedBox(width: 75)),
                     SizedBox(
                       height: 40,
                       width: 40,
@@ -48,7 +48,7 @@ class MyCardTwo extends StatelessWidget {
                 const SizedBox(height: 5),
                 Row(
                   children: const [
-                    SizedBox(width: 270),
+                    Expanded(child: SizedBox(width: 270)),
                     Text(
                       'Transit',
                       style: TextStyle(

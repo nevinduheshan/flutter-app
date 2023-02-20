@@ -37,7 +37,7 @@ class MyCardOne extends StatelessWidget {
                         color: Color.fromARGB(221, 255, 255, 255),
                       ),
                     ),
-                    const SizedBox(width: 85),
+                    const Expanded(child: SizedBox(width: 95)),
                     SizedBox(
                       height: 40,
                       width: 40,
@@ -48,7 +48,7 @@ class MyCardOne extends StatelessWidget {
                 const SizedBox(height: 5),
                 Row(
                   children: const [
-                    SizedBox(width: 265),
+                    Expanded(child: SizedBox(width: 275)),
                     Text(
                       'Miles',
                       style: TextStyle(fontSize: 15, color: Colors.white),

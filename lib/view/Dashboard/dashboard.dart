@@ -95,7 +95,7 @@ class _MyDashBoardState extends State<MyDashBoard> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(width: 170),
+                            const Expanded(child: SizedBox(width: 170)),
                             ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Container(
@@ -163,7 +163,7 @@ class _MyDashBoardState extends State<MyDashBoard> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(width: 125),
+                            const Expanded(child: SizedBox(width: 125)),
                             ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Container(
@@ -231,7 +231,7 @@ class _MyDashBoardState extends State<MyDashBoard> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(width: 170),
+                            const Expanded(child: SizedBox(width: 170)),
                             ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Container(
