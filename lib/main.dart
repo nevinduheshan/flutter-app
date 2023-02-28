@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/view/Dashboard/dashboard.dart';
 import 'package:flutter_application_1/view/Home/homepagenew.dart';
 import 'package:flutter_application_1/view/profile/profile.dart';
+import 'Booked/bookedTicket.dart';
+import 'Booked/seatLayout/mySeat.dart';
 import 'nav.dart';
 import 'view/login.dart';
 import 'view/register.dart';
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
-      home: const MyNavBar(),
+      home: const MyHomePageNew(),
     );
   }
 }
